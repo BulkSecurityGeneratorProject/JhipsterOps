@@ -2,7 +2,8 @@ import { Injector } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { LoginService } from 'app/core/login/login.service';
+import { AuthServerProvider } from 'app/core/auth/auth-session.service';
+import { LoginModalService } from 'app/core/login/login-modal.service';
 import { StateStorageService } from 'app/core/auth/state-storage.service';
 
 export class AuthExpiredInterceptor implements HttpInterceptor {
@@ -26,8 +27,10 @@ export class AuthExpiredInterceptor implements HttpInterceptor {
                                 this.stateStorageService.storeUrl('/');
                             }
 
-                            const loginService: LoginService = this.injector.get(LoginService);
-                            loginService.login();
+                            const authServer: AuthServerProvider = this.injector.get(AuthServerProvider);
+                            authServer.logout();
+                            const loginModalService: LoginModalService = this.injector.get(LoginModalService);
+                            loginModalService.open();
                         }
                     }
                 }

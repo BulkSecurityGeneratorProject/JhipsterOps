@@ -2,13 +2,14 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgbDateMomentAdapter } from './util/datepicker-adapter';
-import { JhipsterSampleSharedLibsModule, JhipsterSampleSharedCommonModule, HasAnyAuthorityDirective } from './';
+import { JhipsterSampleSharedLibsModule, JhipsterSampleSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective } from './';
 
 @NgModule({
     imports: [JhipsterSampleSharedLibsModule, JhipsterSampleSharedCommonModule],
-    declarations: [HasAnyAuthorityDirective],
+    declarations: [JhiLoginModalComponent, HasAnyAuthorityDirective],
     providers: [{ provide: NgbDateAdapter, useClass: NgbDateMomentAdapter }],
-    exports: [JhipsterSampleSharedCommonModule, HasAnyAuthorityDirective],
+    entryComponents: [JhiLoginModalComponent],
+    exports: [JhipsterSampleSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class JhipsterSampleSharedModule {}

@@ -13,6 +13,7 @@ import { JhipsterSampleSharedModule } from 'app/shared';
 import { JhipsterSampleCoreModule } from 'app/core';
 import { JhipsterSampleAppRoutingModule } from './app-routing.module';
 import { JhipsterSampleHomeModule } from './home/home.module';
+import { JhipsterSampleAccountModule } from './account/account.module';
 import { JhipsterSampleEntityModule } from './entities/entity.module';
 import { StateStorageService } from 'app/core/auth/state-storage.service';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
@@ -26,6 +27,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         JhipsterSampleSharedModule,
         JhipsterSampleCoreModule,
         JhipsterSampleHomeModule,
+        JhipsterSampleAccountModule,
         JhipsterSampleEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],

@@ -7,12 +7,24 @@ import { AuthServerProvider } from '../auth/auth-session.service';
 export class LoginService {
     constructor(private principal: Principal, private authServerProvider: AuthServerProvider) {}
 
-    login() {
-        let port = location.port ? ':' + location.port : '';
-        if (port === ':9000') {
-            port = ':8080';
-        }
-        location.href = '//' + location.hostname + port + '/login';
+    login(credentials, callback?) {
+        const cb = callback || function() {};
+
+        return new Promise((resolve, reject) => {
+            this.authServerProvider.login(credentials).subscribe(
+                data => {
+                    this.principal.identity(true).then(account => {
+                        resolve(data);
+                    });
+                    return cb();
+                },
+                err => {
+                    this.logout();
+                    reject(err);
+                    return cb(err);
+                }
+            );
+        });
     }
 
     logout() {

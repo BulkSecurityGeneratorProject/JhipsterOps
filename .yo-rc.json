@@ -7,7 +7,7 @@
     "packageFolder": "io/github/jhipster/application",
     "serverPort": 8080,
     "serviceDiscoveryType": false,
-    "authenticationType": "oauth2",
+    "authenticationType": "session",
     "uaaBaseName": "../uaa",
     "cacheProvider": "ehcache",
     "enableHibernateCache": true,
