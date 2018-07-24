@@ -1,6 +1,6 @@
 package io.github.jhipster.application.web.rest;
 
-import io.github.jhipster.application.JhipsterSampleApp;
+import io.github.jhipster.application.Oauth2App;
 import io.github.jhipster.application.config.audit.AuditEventConverter;
 import io.github.jhipster.application.domain.PersistentAuditEvent;
 import io.github.jhipster.application.repository.PersistenceAuditEventRepository;
@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see AuditResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = JhipsterSampleApp.class)
+@SpringBootTest(classes = Oauth2App.class)
 @Transactional
 public class AuditResourceIntTest {
 

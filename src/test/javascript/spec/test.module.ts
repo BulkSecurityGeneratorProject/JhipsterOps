@@ -5,7 +5,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { JhiDataUtils, JhiDateUtils, JhiEventManager, JhiAlertService, JhiParseLinks } from 'ng-jhipster';
 
-import { Principal, AccountService, LoginModalService } from 'app/core';
+import { Principal, AccountService } from 'app/core';
 import { MockPrincipal } from './helpers/mock-principal.service';
 import { MockAccountService } from './helpers/mock-account.service';
 import { MockActivatedRoute, MockRouter } from './helpers/mock-route.service';
@@ -43,10 +43,6 @@ import { MockEventManager } from './helpers/mock-event-manager.service';
             useClass: MockAccountService
         },
         {
-            provide: LoginModalService,
-            useValue: null
-        },
-        {
             provide: ElementRef,
             useValue: null
         },
@@ -65,4 +61,4 @@ import { MockEventManager } from './helpers/mock-event-manager.service';
     ],
     imports: [HttpClientTestingModule]
 })
-export class JhipsterSampleTestModule {}
+export class Oauth2TestModule {}

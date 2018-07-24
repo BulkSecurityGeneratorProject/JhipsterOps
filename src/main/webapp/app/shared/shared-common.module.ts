@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 
-import { JhipsterSampleSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent } from './';
+import { Oauth2SharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent } from './';
 
 @NgModule({
-    imports: [JhipsterSampleSharedLibsModule],
+    imports: [Oauth2SharedLibsModule],
     declarations: [JhiAlertComponent, JhiAlertErrorComponent],
-    exports: [JhipsterSampleSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent]
+    exports: [Oauth2SharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent]
 })
-export class JhipsterSampleSharedCommonModule {}
+export class Oauth2SharedCommonModule {}

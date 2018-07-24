@@ -20,4 +20,4 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ],
     exports: [FormsModule, CommonModule, NgbModule, NgJhipsterModule, InfiniteScrollModule, FontAwesomeModule]
 })
-export class JhipsterSampleSharedLibsModule {}
+export class Oauth2SharedLibsModule {}

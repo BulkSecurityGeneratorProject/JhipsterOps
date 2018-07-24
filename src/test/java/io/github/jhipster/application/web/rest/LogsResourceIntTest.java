@@ -1,6 +1,6 @@
 package io.github.jhipster.application.web.rest;
 
-import io.github.jhipster.application.JhipsterSampleApp;
+import io.github.jhipster.application.Oauth2App;
 import io.github.jhipster.application.web.rest.vm.LoggerVM;
 import ch.qos.logback.classic.AsyncAppender;
 import ch.qos.logback.classic.LoggerContext;
@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see LogsResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = JhipsterSampleApp.class)
+@SpringBootTest(classes = Oauth2App.class)
 public class LogsResourceIntTest {
 
     private MockMvc restLogsMockMvc;

@@ -1,6 +1,6 @@
 package io.github.jhipster.application.web.rest.errors;
 
-import io.github.jhipster.application.JhipsterSampleApp;
+import io.github.jhipster.application.Oauth2App;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see ExceptionTranslator
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = JhipsterSampleApp.class)
+@SpringBootTest(classes = Oauth2App.class)
 public class ExceptionTranslatorIntTest {
 
     @Autowired

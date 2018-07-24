@@ -20,18 +20,18 @@ import java.util.Collection;
 
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
-public class JhipsterSampleApp {
+public class Oauth2App {
 
-    private static final Logger log = LoggerFactory.getLogger(JhipsterSampleApp.class);
+    private static final Logger log = LoggerFactory.getLogger(Oauth2App.class);
 
     private final Environment env;
 
-    public JhipsterSampleApp(Environment env) {
+    public Oauth2App(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes jhipsterSample.
+     * Initializes Oauth2.
      * <p>
      * Spring profiles can be configured with a program arguments --spring.profiles.active=your-active-profile
      * <p>
@@ -56,7 +56,7 @@ public class JhipsterSampleApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(JhipsterSampleApp.class);
+        SpringApplication app = new SpringApplication(Oauth2App.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         String protocol = "http";
