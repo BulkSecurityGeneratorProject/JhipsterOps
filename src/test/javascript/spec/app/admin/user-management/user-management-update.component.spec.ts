@@ -59,7 +59,7 @@ describe('Component Tests', () => {
                 [],
                 fakeAsync(() => {
                     // GIVEN
-                    const entity = new User(123);
+                    const entity = new User('123');
                     spyOn(service, 'update').and.returnValue(
                         of(
                             new HttpResponse({
