@@ -27,18 +27,12 @@ spring:
             enabled: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost:3306/jhipsterSample?useUnicode=true&characterEncoding=utf8&useSSL=false
-        username: root
+        url: jdbc:postgresql://localhost:5432/jhipsterSample
+        username: jhipsterSample
         password:
-        hikari:
-            data-source-properties:
-                cachePrepStmts: true
-                prepStmtCacheSize: 250
-                prepStmtCacheSqlLimit: 2048
-                useServerPrepStmts: true
     jpa:
-        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-        database: MYSQL
+        database-platform: io.github.jhipster.domain.util.FixedPostgreSQL82Dialect
+        database: POSTGRESQL
         show-sql: false
         properties:
             hibernate.id.new_generator_mappings: true
@@ -100,7 +94,7 @@ jhipster:
     security:
         authentication:
             jwt:
-                secret: 5434fbdf5d0574af324ebc59acb05a343df51010
+                secret: 37ab376606335442eb8d6f8b4e5be0f316e647a9
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
                 token-validity-in-seconds-for-remember-me: 2592000
