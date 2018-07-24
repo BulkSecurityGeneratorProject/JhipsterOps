@@ -9,7 +9,7 @@
     "serviceDiscoveryType": false,
     "authenticationType": "jwt",
     "uaaBaseName": "../uaa",
-    "cacheProvider": "ehcache",
+    "cacheProvider": "infinispan",
     "enableHibernateCache": true,
     "websocket": false,
     "databaseType": "sql",
