@@ -10,7 +10,7 @@
     "authenticationType": "jwt",
     "uaaBaseName": "../uaa",
     "cacheProvider": "ehcache",
-    "enableHibernateCache": true,
+    "enableHibernateCache": false,
     "websocket": false,
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
@@ -22,9 +22,10 @@
     "useSass": false,
     "clientPackageManager": "yarn",
     "testFrameworks": [],
-    "enableTranslation": false,
+    "enableTranslation": true,
     "nativeLanguage": "en",
     "languages": [
+      "fr",
       "en"
     ],
     "clientFramework": "angularX",

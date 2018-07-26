@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 
-import { JhipsterSampleSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent } from './';
+import { JhipsterSampleSharedLibsModule, FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent } from './';
 
 @NgModule({
     imports: [JhipsterSampleSharedLibsModule],
-    declarations: [JhiAlertComponent, JhiAlertErrorComponent],
-    exports: [JhipsterSampleSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent]
+    declarations: [FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent],
+    exports: [JhipsterSampleSharedLibsModule, FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent]
 })
 export class JhipsterSampleSharedCommonModule {}
