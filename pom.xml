@@ -63,6 +63,7 @@
         <jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
         <scala-maven-plugin.version>3.4.1</scala-maven-plugin.version>
         <sonar-maven-plugin.version>3.4.0.905</sonar-maven-plugin.version>
+        <openapi-generator-maven-plugin.version>3.0.1</openapi-generator-maven-plugin.version>
 
         <!-- Sonar properties -->
         <sonar.exclusions>src/main/webapp/content/**/*.*, src/main/webapp/i18n/*.js, target/www/**/*.*</sonar.exclusions>
@@ -213,10 +214,6 @@
         <dependency>
             <groupId>org.ehcache</groupId>
             <artifactId>ehcache</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-jcache</artifactId>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -600,6 +597,32 @@
                     <contextDirectory>${project.build.directory}</contextDirectory>
                 </configuration>
             </plugin>
+            <plugin>
+                <!--
+                    Plugin that provides API-first development using openapi-generator to
+                    generate Spring-MVC endpoint stubs at compile time from an OpenAPI definition file
+                -->
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>${openapi-generator-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/src/main/resources/swagger/api.yml</inputSpec>
+                            <generatorName>spring</generatorName>
+                            <apiPackage>io.github.jhipster.application.web.api</apiPackage>
+                            <modelPackage>io.github.jhipster.application.web.api.model</modelPackage>
+                            <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
+                            <configOptions>
+                                <delegatePattern>true</delegatePattern>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <!-- jhipster-needle-maven-add-plugin -->
         </plugins>
         <pluginManagement>
@@ -645,6 +668,19 @@
                                     </pluginExecutionFilter>
                                     <action>
                                         <ignore/>
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.openapitools</groupId>
+                                        <artifactId>openapi-generator-maven-plugin</artifactId>
+                                        <versionRange>${openapi-generator-maven-plugin.version}</versionRange>
+                                        <goals>
+                                            <goal>generate</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
                                     </action>
                                 </pluginExecution>
                             </pluginExecutions>
