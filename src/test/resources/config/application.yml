@@ -19,6 +19,15 @@ spring:
         name: jhipsterSample
     cache:
         type: simple
+    cloud:
+        stream:
+            kafka:
+                binder:
+                    brokers: localhost
+                    zk-nodes: localhost
+            bindings:
+                output:
+                    destination: topic-jhipster
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:h2:mem:jhipsterSample;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
@@ -86,7 +95,7 @@ jhipster:
     security:
         authentication:
             jwt:
-                secret: 5434fbdf5d0574af324ebc59acb05a343df51010
+                secret: fe24894dc22fdd6e8912e9c82c915f2cfca0b887
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration

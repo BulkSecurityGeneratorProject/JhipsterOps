@@ -25,6 +25,15 @@ spring:
             enabled: false
         livereload:
             enabled: false
+    cloud:
+        stream:
+            kafka:
+                binder:
+                    brokers: localhost
+                    zk-nodes: localhost
+            bindings:
+                output:
+                    destination: topic-jhipster
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://localhost:3306/jhipsterSample?useUnicode=true&characterEncoding=utf8&useSSL=false
@@ -42,10 +51,9 @@ spring:
         show-sql: false
         properties:
             hibernate.id.new_generator_mappings: true
-            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_second_level_cache: false
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: false
-            hibernate.cache.region.factory_class: io.github.jhipster.config.jcache.BeanClassLoaderAwareJCacheRegionFactory
     liquibase:
         contexts: prod
     mail:
@@ -100,7 +108,7 @@ jhipster:
     security:
         authentication:
             jwt:
-                secret: 5434fbdf5d0574af324ebc59acb05a343df51010
+                secret: fe24894dc22fdd6e8912e9c82c915f2cfca0b887
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
                 token-validity-in-seconds-for-remember-me: 2592000
