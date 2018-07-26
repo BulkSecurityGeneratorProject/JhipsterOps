@@ -10,7 +10,7 @@
     "authenticationType": "jwt",
     "uaaBaseName": "../uaa",
     "cacheProvider": "ehcache",
-    "enableHibernateCache": true,
+    "enableHibernateCache": false,
     "websocket": false,
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
