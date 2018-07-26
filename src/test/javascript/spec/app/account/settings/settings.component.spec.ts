@@ -4,6 +4,8 @@ import { Observable, throwError } from 'rxjs';
 import { JhipsterSampleTestModule } from '../../../test.module';
 import { Principal, AccountService } from 'app/core';
 import { SettingsComponent } from 'app/account/settings/settings.component';
+import { JhiTrackerService } from 'app/core/tracker/tracker.service';
+import { MockTrackerService } from '../../../helpers/mock-tracker.service';
 
 describe('Component Tests', () => {
     describe('SettingsComponent', () => {
@@ -16,7 +18,12 @@ describe('Component Tests', () => {
             TestBed.configureTestingModule({
                 imports: [JhipsterSampleTestModule],
                 declarations: [SettingsComponent],
-                providers: []
+                providers: [
+                    {
+                        provide: JhiTrackerService,
+                        useClass: MockTrackerService
+                    }
+                ]
             })
                 .overrideTemplate(SettingsComponent, '')
                 .compileComponents();
